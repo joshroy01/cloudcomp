@@ -36,8 +36,29 @@ You may also use a text editor not present in this list. Choose one that you fin
 
 ### Starting
 
-Open terminal to a directory where you would like to download this repository and run the following command:
+We will assume that you have git and Golang properly set up, and that you are logged into Github.
 
+**Do not run `git clone` on this repository.** Instead perform the following:
+
+1. First create a repository in Github (**not** git) via this link: https://github.com/new
+2. Create a new repository using git by running the following commands in a directory of your choosing:
 ```
-git clone https://github.com/BearCloud/proj0.git
+git init
+git branch -M master
+git remote add origin <YOUR GITHUB REPO LINK HERE>
+git push -u origin master
 ```
+A variation of these commands are present in the "...or create a new repository on the command line" section after you create a repository on Github.
+3. Add this project's repository as remote and alias it to `source`:
+```
+git remote add source https://github.com/BearCloud/proj0.git
+```
+4. Run the following command to pull starter code:
+```
+git pull source master
+```
+5. Run the following command to install the required Golang packages:
+```
+go mod download
+```
+6. You are done with setup.
