@@ -24,15 +24,15 @@ func RegisterRoutes(router *mux.Router) error {
 
 	*/
 
-	router.HandleFunc("/api/getCookie", getCookie).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/getQuery", getQuery).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/getJSON", getJSON).Methods(/*YOUR CODE HERE*/)
+	router.HandleFunc("/api/getCookie", getCookie).Methods(http.MethodGet)
+	router.HandleFunc("/api/getQuery", getQuery).Methods(http.MethodGet)
+	router.HandleFunc("/api/getJSON", getJSON).Methods(http.MethodGet)
 	
-	router.HandleFunc("/api/signup", signup).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/getIndex", getIndex).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/getpw", getPassword).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/updatepw", updatePassword).Methods(/*YOUR CODE HERE*/)
-	router.HandleFunc("/api/deleteuser", deleteUser).Methods(/*YOUR CODE HERE*/)
+	router.HandleFunc("/api/signup", signup).Methods(http.MethodPost)
+	router.HandleFunc("/api/getIndex", getIndex).Methods(http.MethodGet)
+	router.HandleFunc("/api/getpw", getPassword).Methods(http.MethodGet)
+	router.HandleFunc("/api/updatepw", updatePassword).Methods(http.MethodPut)
+	router.HandleFunc("/api/deleteuser", deleteUser).Methods(http.MethodDelete)
 
 	return nil
 }
@@ -42,7 +42,7 @@ func getCookie(response http.ResponseWriter, request *http.Request) {
 	/*
 		Obtain the "access_token" cookie's value and write it to the response
 
-		If there is no such query parameter, write an empty string to the response
+		If there is no such cookie, write an empty string to the response
 	*/
 
 	/*YOUR CODE HERE*/
@@ -52,7 +52,7 @@ func getQuery(response http.ResponseWriter, request *http.Request) {
 
 	/*
 		Obtain the "userID" query paramter and write it to the response
-		If there is no such cookie, write an empty string to the response
+		If there is no such query parameter, write an empty string to the response
 	*/
 
 	/*YOUR CODE HERE*/
