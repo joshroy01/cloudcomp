@@ -70,7 +70,7 @@ func getJSON(response http.ResponseWriter, request *http.Request) {
 
 		Decode this json file into an instance of Credentials.
 
-		Then, write the username and password to the response, separated by a newline.request
+		Then, write the username and password to the response, separated by a newline.
 		
 		Make sure to error check! If there are any errors, call http.Error(), and pass in a "http.StatusBadRequest" What kind of errors can we expect here?
 	*/
